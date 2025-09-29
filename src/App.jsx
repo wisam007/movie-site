@@ -19,8 +19,8 @@ const API_OPTIONS = {
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
   const [moviesList, setMovieList] = useState([]);
+  const [trendingMovies,setTrendingMovies] = useState([])
   const [isLoading, setIsLoading] = useState(false);
   const [debouncedSearchTerm,setDebouncesdSearchTerm] = useState("")
 
@@ -55,6 +55,14 @@ const App = () => {
     }
   };
 
+  const loadTrendingMovies  = async ()=>{
+    try {
+      console.log("")
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
   useEffect(() => {
     fetchMovies(debouncedSearchTerm);
   }, [debouncedSearchTerm]);
